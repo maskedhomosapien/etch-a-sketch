@@ -5,7 +5,8 @@ const random = document.querySelector(".random-button");
 const reset = document.querySelector(".reset-button"); 
 
 function populateBoard(size) {
-    board.style.gridTemplateColumns = `repeat($(size), 1fr`;board.style.gridTemplateRows = `repeat($(size), 1fr`;
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr`;
+    board.style.gridTemplateRows = `repeat(${size}, 1fr`;
 
     for (let i = 0; i < 256; i++) {
         let square = document.createElement("div");
@@ -15,3 +16,7 @@ function populateBoard(size) {
 }
 
 populateBoard(16);
+
+function changeSize(input){
+    populateBoard(input)
+}
