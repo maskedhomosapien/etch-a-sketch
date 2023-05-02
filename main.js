@@ -6,10 +6,7 @@ const reset = document.querySelector(".reset-button");
 
 function populateBoard(size) {
     let squares = board.querySelectorAll("div")
-    console.log(squares)
-    squares.forEach(div => {
-        div.remove();
-    });
+    squares.forEach((div) => div.remove());
     board.style.gridTemplateColumns = `repeat(${size}, 1fr`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr`;
     board.style.border = "solid 2px black"
@@ -25,5 +22,9 @@ function populateBoard(size) {
 populateBoard(16);
 
 function changeSize(input){
-    populateBoard(input)
+    if(input >= 2 && input <= 100 ) {
+        populateBoard(input); 
+    }else {
+        console.log("too many squares");
+    }
 }
